@@ -2,10 +2,17 @@
 
 This resource can be used to generate a fresh version of the vehicleData.json.
 
+**This resource generates the vehicleData.json in your local GTA-Language!**
+
 ## Download latest vehicleData.json
 Latest GTA-Update: Gunrunning
 
-[Download vehicleData.json now](https://github.com/Micky5991/GT-MP-vehicleData/releases/download/v1.0.0/vehicleData.json)
+Language | Last updated | Download
+--- | --- | ---
+English | 30th June 2017 | [Click here](https://github.com/Micky5991/GT-MP-vehicleData/releases/download/v1.0.0/vehicleData-en.json)
+German | 30th June 2017 | [Click here](https://github.com/Micky5991/GT-MP-vehicleData/releases/download/v1.0.0/vehicleData-de.json)
+
+*You have to rename both files to `vehicleData.json` to use it properly*
 
 
 ## Installation (Generate your own)
