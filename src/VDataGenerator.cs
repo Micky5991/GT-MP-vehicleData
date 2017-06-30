@@ -31,7 +31,6 @@ namespace vd_generator.server
 
             try
             {
-                
                 const string path = @"vd-generator/vehicleData.json";
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
                 File.WriteAllText(path, result);
