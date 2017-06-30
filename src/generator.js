@@ -5,7 +5,7 @@ API.onServerEventTrigger.connect(function(eventName, args) {
 
     var result = {};
     for(var id of values) {
-        var row = {
+        result[id] = {
             DisplayName:            API.getVehicleDisplayName(id) , // API.returnNative("GET_DISPLAY_NAME_FROM_VEHICLE_MODEL", 4, id)
             MaxSpeed:               API.returnNative("_GET_VEHICLE_MODEL_MAX_SPEED", 7, id),
             MaxBraking:             API.returnNative("GET_VEHICLE_MODEL_MAX_BRAKING", 7, id),
@@ -19,9 +19,7 @@ API.onServerEventTrigger.connect(function(eventName, args) {
             MaxOccupants:           API.returnNative("0x2AD93716F184EDA4", 0, id),
             VehicleClass:           API.returnNative("GET_VEHICLE_CLASS_FROM_NAME", 0, id)
         };
-        result[id] = row;
     }
 
     API.triggerServerEvent("vd_receiveresult", API.toJson(result));
-
 });

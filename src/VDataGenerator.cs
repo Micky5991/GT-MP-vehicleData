@@ -5,7 +5,7 @@ using GrandTheftMultiplayer.Server.Elements;
 using GrandTheftMultiplayer.Server.Managers;
 using GrandTheftMultiplayer.Shared;
 
-namespace vd_generator.server
+namespace vd_generator
 {
     public class VDataGenerator : Script
     {
@@ -14,9 +14,8 @@ namespace vd_generator.server
         {
             API.consoleOutput("Starting vehicleData.json-generator...");
 
-            API.onClientEventTrigger += this.OnClientEvent;
+            API.onClientEventTrigger     += OnClientEvent;
             API.onPlayerFinishedDownload += OnPlayerFinishedDownload;
-
         }
 
         private void OnPlayerFinishedDownload(Client player)
@@ -51,7 +50,7 @@ namespace vd_generator.server
             sender.sendChatMessage("vehicleData.json-generation started...");
 
             uint[] values = (uint[]) Enum.GetValues(typeof(VehicleHash));
-            sender.triggerEvent("vd_generate", API.toJson(values));   
+            sender.triggerEvent("vd_generate", this.API.toJson(values));   
         }
         
     
