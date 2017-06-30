@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<meta>
+    <info name="VehicleData.json Generator" description="Script to generate a new version of the vehicleData.json" type="script" author= "Micky5991" version="0.1" shadowcopy="false" async="false"/>
+
+    <script src="src/VDataGenerator.cs" type="server" lang="csharp" />
+
+    <!-- GEBAUTE DATEIEN -->
+    <script src="src/generator.js" type="client" lang="javascript" />
+ 
+     <settings>
+     </settings>
+ </meta>
