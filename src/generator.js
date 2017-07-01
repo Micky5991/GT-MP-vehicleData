@@ -4,9 +4,14 @@ API.onServerEventTrigger.connect(function(eventName, args) {
     var values = JSON.parse(args[0]);
 
     var result = {};
-    for(var id of values) {
+    for(var name of values) {
+        var id = API.getHashKey(name);
+
+        var displayName = API.getVehicleDisplayName(id);
+        if(displayName == "NULL") displayName = name;
+
         result[id] = {
-            DisplayName:            API.getVehicleDisplayName(id) , // API.returnNative("GET_DISPLAY_NAME_FROM_VEHICLE_MODEL", 4, id)
+            DisplayName:            displayName,
             MaxSpeed:               API.returnNative("_GET_VEHICLE_MODEL_MAX_SPEED", 7, id),
             MaxBraking:             API.returnNative("GET_VEHICLE_MODEL_MAX_BRAKING", 7, id),
             MaxTraction:            API.returnNative("GET_VEHICLE_MODEL_MAX_TRACTION", 7, id),
@@ -15,8 +20,8 @@ API.onServerEventTrigger.connect(function(eventName, args) {
             _0x53409B5163D5B846:    API.returnNative("0x53409B5163D5B846", 7, id),
             _0xC6AD107DDC9054CC:    API.returnNative("0xC6AD107DDC9054CC", 7, id),
             _0x5AA3F878A178C4FC:    API.returnNative("0x5AA3F878A178C4FC", 7, id),
-            MaxNumberOfPassengers:  (API.returnNative("0x2AD93716F184EDA4", 0, id) - 1),
-            MaxOccupants:           API.returnNative("0x2AD93716F184EDA4", 0, id),
+            MaxNumberOfPassengers:  (API.returnNative("0x2AD93716F184EDA4", 0, id) - 2),
+            MaxOccupants:           (API.returnNative("0x2AD93716F184EDA4", 0, id) - 1),
             VehicleClass:           API.returnNative("GET_VEHICLE_CLASS_FROM_NAME", 0, id)
         };
     }

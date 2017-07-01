@@ -49,7 +49,7 @@ namespace vd_generator
         {
             sender.sendChatMessage("vehicleData.json-generation started...");
 
-            uint[] values = (uint[]) Enum.GetValues(typeof(VehicleHash));
+            string[] values = Enum.GetNames(typeof(VehicleHash));
             sender.triggerEvent("vd_generate", this.API.toJson(values));   
         }
         
