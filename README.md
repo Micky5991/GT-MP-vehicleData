@@ -1,3 +1,5 @@
+> :warning: This repository is deprecated due to the latest GT-MP changes.
+
 # vehicleData.json generator
 
 This resource can be used to generate a fresh version of the vehicleData.json.
